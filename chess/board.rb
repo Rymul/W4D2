@@ -62,7 +62,7 @@ class Board
 
     def move_piece(start_pos, end_pos)
         if self[start_pos].empty?
-            raise "Ther is no piece at this position."
+            raise "There is no piece at this position."
         end
         # self[start_pos].pos = end_pos
         self[end_pos], self[start_pos] = self[start_pos], self[end_pos]
