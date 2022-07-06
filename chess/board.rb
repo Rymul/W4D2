@@ -64,12 +64,14 @@ class Board
         if self[start_pos].empty?
             raise "Ther is no piece at this position."
         end
-        if valid_pos?(end_pos)
-            self[start_pos].pos = end_pos
-        end
+        # self[start_pos].pos = end_pos
+        self[end_pos], self[start_pos] = self[start_pos], self[end_pos]
+        self[end_pos].pos = end_pos
+        
     end
 
     def render
+        
 
     end
 
