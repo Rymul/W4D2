@@ -2,6 +2,7 @@
 
 class Piece
 
+    attr_reader :color
     attr_writer :pos
     def initialize(color, board, pos)
         @color = color
@@ -10,11 +11,11 @@ class Piece
     end
 
     def to_s
-
+        " #{symbol} "
     end
 
     def empty?
-
+        false
     end
 
     def valid_moves

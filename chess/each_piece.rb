@@ -13,6 +13,10 @@ include Singleton
         nil
     end
 
+    def empty?
+        true
+    end
+
     def symbol
         "☐"
     end
@@ -27,7 +31,11 @@ class Pawn < Piece
 
 
     def symbol
-        :P
+        if color == black
+            :♟
+        else
+            :♙
+        end
     end
 
     def moves
@@ -51,6 +59,124 @@ class Pawn < Piece
 
     def side_attack
 
+    end
+
+end
+
+
+class King
+
+    def initialize(color, board, pos)
+        super(color, board, pos)
+    end
+
+
+    def symbol
+        if color == black
+            :♚
+        else
+            :♔
+        end
+        
+    end
+
+    def moves_diff
+        moves = []
+    end
+
+end
+
+
+class Knight
+
+    def initialize(color, board, pos)
+        super(color, board, pos)
+    end
+
+
+    def symbol
+        if color == black
+            :♞
+        else
+            :♘
+        end
+        
+    end
+
+    def moves_diff
+        moves = []
+    end
+
+end
+
+
+
+class Queen 
+
+    def initialize(color, board, pos)
+        super(color, board, pos)
+    end
+
+
+    def symbol
+        if color == black
+            :♛
+        else
+            :♕
+        end
+        
+    end
+
+    def moves_diff
+        moves = []
+    end
+
+end
+
+
+
+class Bishop
+
+    def initialize(color, board, pos)
+        super(color, board, pos)
+    end
+
+
+    def symbol
+        if color == black
+            :♝
+        else
+            :♗
+        end
+        
+    end
+
+    def moves_diff
+        moves = []
+    end
+
+end
+
+
+
+class Rook
+
+    def initialize(color, board, pos)
+        super(color, board, pos)
+    end
+
+
+    def symbol
+        if color == black
+            :♜
+        else
+            :♖
+        end
+        
+    end
+
+    def moves_diff
+        moves = []
     end
 
 end
