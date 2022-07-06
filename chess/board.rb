@@ -64,15 +64,23 @@ class Board
         if self[start_pos].empty?
             raise "There is no piece at this position."
         end
-        # self[start_pos].pos = end_pos
-        self[end_pos], self[start_pos] = self[start_pos], self[end_pos]
-        self[end_pos].pos = end_pos
-        
+        p self[start_pos]
+        p end_pos
+        if self[start_pos].moves.include?(end_pos)
+            self[end_pos], self[start_pos] = self[start_pos], self[end_pos]
+            self[end_pos].pos = end_pos
+        else
+            raise "That is not a valid move."
+        end
     end
 
     def render
-        
-
+        system("clear")
+        puts "  #{(0...8).to_a.join(" ")}"
+        self.board.each_with_index do |subarr, i|
+            puts "#{i} #{subarr.join(" ")}"
+        end
+        puts
     end
 
 

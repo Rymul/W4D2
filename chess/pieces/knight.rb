@@ -1,9 +1,12 @@
 require_relative "../piece.rb"
-class Knight < Piece
+require_relative "stepable_module.rb"
 
+class Knight < Piece
+        
+    include Stepable
 
     def symbol
-        if color == black
+        if color == "Black"
             :♞
         else
             :♘
@@ -11,8 +14,8 @@ class Knight < Piece
         
     end
 
-    def moves_diff
-        moves = []
+    def moves_diffs
+        [ [1, -2], [2, -1], [2, 1], [1, 2], [-1, 2], [-2, 1], [-2, -1], [-1, -2] ]
     end
 
 end

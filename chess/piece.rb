@@ -11,7 +11,7 @@ class Piece
     end
 
     def to_s
-        " #{symbol} "
+        "#{symbol}"
     end
 
     def empty?

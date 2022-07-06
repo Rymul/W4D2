@@ -4,7 +4,7 @@ require_relative "slideable_module.rb"
 class Queen < Piece
 include Slideable
     def symbol
-        if color == black
+        if color == "Black"
             :♛
         else
             :♕
