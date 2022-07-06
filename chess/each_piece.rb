@@ -1,158 +1,156 @@
-require_relative "piece.rb"
-require "singleton"
+# require_relative "piece.rb"
+# require "singleton"
 
-class NullPiece < Piece
-include Singleton
-    def initialize
-        @color = nil
-        @board = nil 
-        @pos = nil 
-    end
+# class NullPiece < Piece
+# include Singleton
+#     def initialize
+#         @color = nil
+#         @board = nil 
+#         @pos = nil 
+#     end
 
-    def moves
-        nil
-    end
+#     def moves
+#         nil
+#     end
 
-    def empty?
-        true
-    end
+#     def empty?
+#         true
+#     end
 
-    def symbol
-        "☐"
-    end
-end
-
-
-class Pawn < Piece
+#     def symbol
+#         "☐"
+#     end
+# end
 
 
+# class Pawn < Piece
 
-    def symbol
-        if color == black
-            :♟
-        else
-            :♙
-        end
-    end
+#     def symbol
+#         if color == black
+#             :♟
+#         else
+#             :♙
+#         end
+#     end
 
-    def moves
-        moves = []
-    end
+#     def moves
+#         moves = []
+#     end
 
-    private
+#     private
 
-    def at_start_row?
-        if self.pos 
-        end
+#     def at_start_row?
+#         if self.pos 
+#         end
 
-    end
+#     end
 
-    def forward_direction
+#     def forward_direction
 
-    end
+#     end
 
-    def forward_steps
+#     def forward_steps
 
-    end
+#     end
 
-    def side_attack
+#     def side_attack
 
-    end
+#     end
 
-end
+# end
+
+# require_relative "piece.rb"
+# class King < Piece
 
 
-class King < Piece
-
-
-    def symbol
-        if color == black
-            :♚
-        else
-            :♔
-        end
+#     def symbol
+#         if color == black
+#             :♚
+#         else
+#             :♔
+#         end
         
-    end
+#     end
 
-    def moves_diff
-        moves = []
-    end
+#     def moves_diff
+#         moves = []
+#     end
 
-end
+# end
+
+# require_relative "piece.rb"
+# class Knight < Piece
 
 
-class Knight < Piece
-
-
-    def symbol
-        if color == black
-            :♞
-        else
-            :♘
-        end
+#     def symbol
+#         if color == black
+#             :♞
+#         else
+#             :♘
+#         end
         
-    end
+#     end
 
-    def moves_diff
-        moves = []
-    end
+#     def moves_diff
+#         moves = []
+#     end
 
-end
+# end
 
 
+# require_relative "piece.rb"
+# class Queen < Piece
 
-class Queen < Piece
-
-    def symbol
-        if color == black
-            :♛
-        else
-            :♕
-        end
+#     def symbol
+#         if color == black
+#             :♛
+#         else
+#             :♕
+#         end
         
-    end
+#     end
 
-    def moves_diff
-        moves = []
-    end
+#     def moves_diff
+#         moves = []
+#     end
 
-end
-
-
-
-class Bishop < Piece
+# end
 
 
-    def symbol
-        if color == black
-            :♝
-        else
-            :♗
-        end
+# require_relative "piece.rb"
+# class Bishop < Piece
+
+
+#     def symbol
+#         if color == black
+#             :♝
+#         else
+#             :♗
+#         end
         
-    end
+#     end
 
-    def moves_diff
-        moves = []
-    end
+#     def moves_diff
+#         moves = []
+#     end
 
-end
+# end
 
 
+# require_relative "piece.rb"
+# class Rook < Piece
 
-class Rook < Piece
-
-    def symbol
-        if color == black
-            :♜
-        else
-            :♖
-        end
+#     def symbol
+#         if color == black
+#             :♜
+#         else
+#             :♖
+#         end
         
-    end
+#     end
 
-    def moves_diff
-        moves = []
-    end
+#     def moves_diff
+#         moves = []
+#     end
 
-end
+# end

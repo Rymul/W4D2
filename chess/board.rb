@@ -1,34 +1,12 @@
-require_relative "each_piece.rb"
+require_relative "pieces/bishop.rb"
+require_relative "pieces/king.rb"
+require_relative "pieces/knight.rb"
+require_relative "pieces/null_piece.rb"
+require_relative "pieces/pawn.rb"
+require_relative "pieces/queen.rb"
+require_relative "pieces/rook.rb"
 
 class Board
-
-    # def self.new_board(board)
-    #    board = 
-    #    [
-    #     Piece.new("White", board, [0,0]), 
-    #     Piece.new("White", board, [0,1]), 
-    #     Piece.new("White", board, [0,2]),
-    #     Piece.new("White", board, [0,3]),
-    #     Piece.new("White", board, [0,4]),
-    #     Piece.new("White", board, [0,5]),
-    #     Piece.new("White", board, [0,6]),
-    #     Piece.new("White", board, [0,7])
-    #    ] +
-    #    temp = []
-    #     8.times do |i|
-    #         temp << Piece.new("White", board, [1,i]) 
-    #     end
-    #     4.times do 
-    #         8.times do |i|
-    #              << NullPiece.new("White", board, [1,i])
-            
-    #     end
-
-    #     2.times do
-    #    sub[0].push()
-    #    8.times do
-    #    sub[1] << Pawn.new
-    #    sub
 
     attr_reader :board
     def initialize
@@ -67,13 +45,9 @@ class Board
     
         
     def valid_pos?(pos)
-        # self[pos] 
+        # to check if you have moved into check
         true
-        # valid board bounds
-        # row, col = pos
-        # row >= 0 && row <= 7 && col >= 0 && col <= 7
-
-        # empty?
+       
     end
 
     def [](pos)
