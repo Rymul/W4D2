@@ -37,8 +37,8 @@ class Board
         self[[0, 7]] = Rook.new("Black", self,  [0, 7]) # black rook R
 
         8.times do |i|
-            self[[1, i]] = Pawn.new("White", self,  [1, i]) # white pawn
-            self[[6, i]] = Pawn.new("Black", self,  [6, i]) # black pawn
+            self[[1, i]] = Pawn.new("Black", self,  [1, i]) # black pawn
+            self[[6, i]] = Pawn.new("White", self,  [6, i]) #  pawn
         end
     end
 

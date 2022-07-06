@@ -12,8 +12,8 @@ include Slideable
         
     end
 
-    def moves_diff
-        moves = []
+    def moves_dirs
+       diaginal_move_dirs + horizontal_move_dirs
     end
 
 end

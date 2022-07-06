@@ -1,7 +1,9 @@
 require_relative "../piece.rb"
+require_relative "slideable_module.rb"
+
 class Bishop < Piece
 
-
+include Slideable
     def symbol
         if color == black
             :♝
@@ -11,8 +13,8 @@ class Bishop < Piece
         
     end
 
-    def moves_diff
-        moves = []
+    def move_dirs 
+        diaginal_move_dirs
     end
 
 end

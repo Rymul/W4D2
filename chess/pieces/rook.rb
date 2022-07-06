@@ -1,6 +1,8 @@
 require_relative "../piece.rb"
-class Rook < Piece
+require_relative "slideable_module.rb"
 
+class Rook < Piece
+    include Slideable
     def symbol
         if color == black
             :♜
@@ -10,8 +12,8 @@ class Rook < Piece
         
     end
 
-    def moves_diff
-        moves = []
+    def move_dirs 
+        horizontal_move_dirs
     end
 
 end

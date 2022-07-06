@@ -24,7 +24,9 @@ module Slideable
     end
 
     def sub_moves(dx,dy)
+        current_pos_piece = self.board[[self.pos[0], self.pos[1]]]
         return [] if !grow_unblock_moves_in_dir([self.pos[0] + dx, self.pos[1] + dy])
+        return [] if !current_pos_piece.empty? && current_pos_piece.color != self.color 
         mover = self.dup
         mover.pos = [mover.pos[0] + dx, mover.pos[1] + dy]
         [[self.pos[0] + dx , self.pos[1] + dy]] + mover.sub_moves(dx,dy)
@@ -37,13 +39,13 @@ module Slideable
     end
 
     def grow_unblock_moves_in_dir(pos)
-        p pos
+        
         if self.in_board?(pos)
             piece_at_pos = self.board[pos] 
         else
             return false
         end
-
+        
         if piece_at_pos.empty?
             return true
         elsif piece_at_pos.color == self.color
