@@ -1,4 +1,4 @@
-
+require_relative "each_piece.rb"
 
 class Board
 
@@ -31,42 +31,40 @@ class Board
     #    sub
 
     attr_reader :board
-    def initialize(board, cursor)
-        @board = Array.new(8) {Array.new(8, NullPiece.intance)}
-        @cursor = cursor
+    def initialize
+        @board = Array.new(8) {Array.new(8, NullPiece.instance)}
+        self.populate
     end
 
     def populate
-        self.add_piece(King.new("White", self.board, nil), [7, 4]) # white king
-        self.add_piece(King.new("Black", self.board, nil), [0, 4]) # black king
+        self[[7,4]] = King.new("White", self,[7, 4]) # white king
+        self[[0, 4]] = King.new("Black", self,  [0, 4]) # black king
 
-        self.add_piece(Queen.new("White", self.board, nil), [7, 3]) # white queen
-        self.add_piece(Queen.new("Black", self.board, nil), [0, 3]) # black queen
+        self[[7, 3]] = Queen.new("White", self, [7, 3]) # white queen
+        self[[0, 3]] = Queen.new("Black", self, [0, 3]) # black queen
 
-        self.add_piece(Bishop.new("White", self.board, nil), [7, 2]) # white bishop L
-        self.add_piece(Bishop.new("White", self.board, nil), [7, 5]) # white bishop R
-        self.add_piece(Bishop.new("Black", self.board, nil), [0, 2]) # black bishop L
-        self.add_piece(Bishop.new("Black", self.board, nil), [0, 5]) # black bishop R
+        self[[7, 2]] = Bishop.new("White", self,[7, 2]) # white bishop L
+        self[[7, 5]] = Bishop.new("White", self,[7, 5]) # white bishop R
+        self[[0, 2]] = Bishop.new("Black", self,[0, 2]) # black bishop L
+        self[[0, 5]] = Bishop.new("Black", self,[0, 5]) # black bishop R
 
-        self.add_piece(Knight.new("White", self.board, nil), [7, 1]) # white knight L
-        self.add_piece(Knight.new("White", self.board, nil), [7, 6]) # white knight R
-        self.add_piece(Knight.new("Black", self.board, nil), [0, 1]) # black knight L
-        self.add_piece(Knight.new("Black", self.board, nil), [0, 6]) # black knight R
+        self[[7, 1]] = Knight.new("White", self,[7, 1]) # white knight L
+        self[[7, 6]] = Knight.new("White", self,[7, 6]) # white knight R
+        self[[0, 1]] = Knight.new("Black", self,[0, 1]) # black knight L
+        self[[0, 6]] = Knight.new("Black", self,[0, 6]) # black knight R
 
-        self.add_piece(Rook.new("White", self.board, nil), [7, 0]) # white rook L
-        self.add_piece(Rook.new("White", self.board, nil), [7, 7]) # white rook R
-        self.add_piece(Rook.new("Black", self.board, nil), [0, 0]) # black rook L
-        self.add_piece(Rook.new("Black", self.board, nil), [0, 7]) # black rook R
+        self[[7, 0]] = Rook.new("White", self,  [7, 0]) # white rook L
+        self[[7, 7]] = Rook.new("White", self,  [7, 7]) # white rook R
+        self[[0, 0]] = Rook.new("Black", self,  [0, 0]) # black rook L
+        self[[0, 7]] = Rook.new("Black", self,  [0, 7]) # black rook R
 
         8.times do |i|
-            self.add_piece(Pawn.new("White", self.board, nil), [1, i]) # white pawn
-            self.add_piece(Pawn.new("Black", self.board, nil), [6, i]) # black pawn
+            self[[1, i]] = Pawn.new("White", self,  [1, i]) # white pawn
+            self[[6, i]] = Pawn.new("Black", self,  [6, i]) # black pawn
         end
     end
 
-    def add_piece(piece, pos)
-        piece.pos = pos
-    end
+    
         
     def valid_pos?(pos)
         # self[pos] 
@@ -85,7 +83,7 @@ class Board
 
     def []=(pos, val)
         row, col = pos
-        self.board[row][col] = val
+        @board[row][col] = val
     end
 
     def move_piece(start_pos, end_pos)

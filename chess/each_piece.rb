@@ -25,9 +25,6 @@ end
 
 class Pawn < Piece
 
-    def initialize(color, board, pos)
-        super(color, board, pos)
-    end
 
 
     def symbol
@@ -46,6 +43,7 @@ class Pawn < Piece
 
     def at_start_row?
         if self.pos 
+        end
 
     end
 
@@ -64,11 +62,7 @@ class Pawn < Piece
 end
 
 
-class King
-
-    def initialize(color, board, pos)
-        super(color, board, pos)
-    end
+class King < Piece
 
 
     def symbol
@@ -87,11 +81,7 @@ class King
 end
 
 
-class Knight
-
-    def initialize(color, board, pos)
-        super(color, board, pos)
-    end
+class Knight < Piece
 
 
     def symbol
@@ -111,12 +101,7 @@ end
 
 
 
-class Queen 
-
-    def initialize(color, board, pos)
-        super(color, board, pos)
-    end
-
+class Queen < Piece
 
     def symbol
         if color == black
@@ -135,11 +120,7 @@ end
 
 
 
-class Bishop
-
-    def initialize(color, board, pos)
-        super(color, board, pos)
-    end
+class Bishop < Piece
 
 
     def symbol
@@ -159,12 +140,7 @@ end
 
 
 
-class Rook
-
-    def initialize(color, board, pos)
-        super(color, board, pos)
-    end
-
+class Rook < Piece
 
     def symbol
         if color == black
