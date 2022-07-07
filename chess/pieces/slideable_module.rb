@@ -53,22 +53,6 @@ module Slideable
         else 
             return true
         end
-
-        # row, col = self.pos #starting pos
-        # new_pos = [row + dx, col + dy]
-        # if self.in_board?(new_pos)
-        #     piece_at_pos = self.board[new_pos] 
-        # else
-        #     return false
-        # end
-
-        # if piece_at_pos.empty?
-        #     return true
-        # elsif piece_at_pos.color == self.color
-        #     return false
-        # else 
-        #     return true
-        # end
     end
 
 
